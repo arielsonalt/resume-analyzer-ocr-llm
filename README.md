@@ -137,10 +137,6 @@ O FastAPI gera automaticamente documentação OpenAPI.
 - Testar requisições diretamente no navegador\
 - Validar parâmetros automaticamente
 
-### Arquivo OpenAPI
-
-    http://localhost:8000/openapi.json
-
 ---
 
 ## Endpoints Disponíveis
@@ -157,15 +153,14 @@ Analisa múltiplos currículos.
 
 **Parâmetros:**
 
-  | Campo       | Tipo            | Obrigatório | Descrição                                                                                                  |
-|-------------|-----------------|-------------|------------------------------------------------------------------------------------------------------------|
-| request_id | string (UUID)   | sim         | Identificador único da requisição (inserir um código UUID) |
-| user_id    | string          | sim         | Identificador do solicitante (inserir um id para o usuário)                                               |
-| query      | string          | não         | Pergunta de recrutamento                                                                                  |
-| top_k      | int             | não         | Quantidade de resultados no ranking                                                                       |
-| ocr_engine| string          | não         | tesseract \| easyocr \| paddleocr                                                                         |
-| files      | arquivos        | sim         | PDFs ou imagens JPG/PNG                                                                                   |
-
+| Campo      | Tipo          | Obrigatório | Descrição                                                    |
+| ---------- | ------------- | ------------ | -------------------------------------------------------------- |
+| request_id | string (UUID) | sim          | Identificador único da requisição (inserir um código UUID) |
+| user_id    | string        | sim          | Identificador do solicitante (inserir um id para o usuário)   |
+| query      | string        | não         | Pergunta de recrutamento                                       |
+| top_k      | int           | não         | Quantidade de resultados no ranking                            |
+| ocr_engine | string        | não         | tesseract\| easyocr \| paddleocr                               |
+| files      | arquivos      | sim          | PDFs ou imagens JPG/PNG                                        |
 
 ---
 
