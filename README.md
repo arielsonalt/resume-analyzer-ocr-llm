@@ -103,7 +103,7 @@ O projeto possui **Docker Compose** configurado com:
 
 ### Para subir o sistema
 
-    **Certifique-se de que o docker esteja devidamente instalado (ex: docker desktop ativo)**
+  **Certifique-se de que o docker esteja devidamente instalado (ex: docker desktop ativo)**
 
 ```
     docker compose up --build
