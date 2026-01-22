@@ -155,18 +155,17 @@ Analisa múltiplos currículos.
 **1) Sem query** → Retorna sumários individuais.
 **2) Com query** → Retorna ranking + justificativas.
 
-**Parâmetros (multipart/form-data):**
+**Parâmetros:**
 
-  Campo        Tipo            Obrigatório   Descrição
+  | Campo       | Tipo            | Obrigatório | Descrição                                                                                                  |
+|-------------|-----------------|-------------|------------------------------------------------------------------------------------------------------------|
+| request_id | string (UUID)   | sim         | Identificador único da requisição (inserir um código UUID) |
+| user_id    | string          | sim         | Identificador do solicitante (inserir um id para o usuário)                                               |
+| query      | string          | não         | Pergunta de recrutamento                                                                                  |
+| top_k      | int             | não         | Quantidade de resultados no ranking                                                                       |
+| ocr_engine| string          | não         | tesseract \| easyocr \| paddleocr                                                                         |
+| files      | arquivos        | sim         | PDFs ou imagens JPG/PNG                                                                                   |
 
----
-
-  request_id   string (UUID)   sim           Identificador único da requisição (inserir um código UUID - Geralmente esse código é gerado de forma automatica, porém segui o requisito informado)
-  user_id      string          sim           Identificador do solicitante (inserir um id para o usuário)
-  query        string          não           Pergunta de recrutamento
-  top_k        int             não           Quantidade de resultados no ranking
-  ocr_engine   string          não           tesseract \| easyocr \| paddleocr
-  files        arquivos        sim           PDFs ou imagens JPG/PNG
 
 ---
 
@@ -189,15 +188,15 @@ Lista logs armazenados no MongoDB para auditoria.
 ## Estrutura do Projeto
 
     app/
-     ├── main.py                		→ API FastAPI
-     ├── ocr/                  			→ Engines OCR
-     ├── llm/                   			→ Summarizer e Explainer
-     ├── rank/                  		→ Ranking semântico
-     ├── store/                 		→ Persistência MongoDB
+     ├── main.py                	→ API FastAPI
+     ├── ocr/                  		→ Engines OCR
+     ├── llm/                   	→ Summarizer e Explainer
+     ├── rank/                  	→ Ranking semântico
+     ├── store/                 	→ Persistência MongoDB
      ├── docker-compose.yml.    	→ Orquestrador de múltiplos containers
-     ├── Dockerfile             		→ Configurações do container
-     ├── Readme.md              		→ Informações sobre o projeto
-     └── requirements.txt       		→ Dependências do projetos e suas respectivas versões
+     ├── Dockerfile             	→ Configurações do container
+     ├── Readme.md              	→ Informações sobre o projeto
+     └── requirements.txt       	→ Dependências do projetos e suas respectivas versões
 
 ---
 
